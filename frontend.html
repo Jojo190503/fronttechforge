@@ -9,165 +9,248 @@
             background-image: url('image2.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+            }
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+
+        
+        .contact-bg {
+            background-image: url('image3.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container-img {
+            background-image: url('image1.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
         }
     </style>
 </head>
 <body class="font-sans">
-    <div class="hero-section">
-        <header class="flex items-center justify-between p-8">
-            <div class="flex-grow flex justify-center">
-                <nav>
-                    <ul class="flex space-x-8">
-                        <li><a href="#" class="text-white hover:text-yellow-300">Company</a></li>
-                        <li><a href="#" class="text-white hover:text-gray-300">About Us</a></li>
-                        <li><a href="#" class="text-white hover:text-gray-300">Services</a></li>
-                        <li><a href="#" class="text-white hover:text-gray-300">Contact</a></li>
+<!-- Hero Section -->
+    <div class="bg-cover bg-center min-h-screen" style="background-image: url('image2.jpg');">
+        <header class="p-4 lg:p-8">
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center justify-between">
+                <nav class="flex-grow flex justify-center">
+                    <ul class="flex space-x-4 lg:space-x-8">
+                        <li><a href="#" class="text-white hover:text-yellow-300 transition duration-300">Company</a></li>
+                        <li><a href="#" class="text-white hover:text-yellow-300 transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-white hover:text-yellow-300 transition duration-300">Services</a></li>
+                        <li><a href="#" class="text-white hover:text-yellow-300 transition duration-300">Contact</a></li>
                     </ul>
                 </nav>
+                <section>
+                    <p><a href="#" class="text-white hover:text-yellow-300 transition duration-300">+ telephone number</a></p>
+                </section>
             </div>
-            <section>
-                <p ><a href="#" class="text-white hover:text-yellow-300">+ telephone number</a></p>
-            </section>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex justify-between items-center">
+                <div class="text-white font-bold text-xl">Company</div>
+                <button class="text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="md:hidden">
+                <ul class="space-y-4 p-4 bg-black bg-opacity-80 rounded-lg">
+                    <li><a href="#" class="block text-white hover:text-yellow-300 transition duration-300">Company</a></li>
+                    <li><a href="#" class="block text-white hover:text-yellow-300 transition duration-300">About Us</a></li>
+                    <li><a href="#" class="block text-white hover:text-yellow-300 transition duration-300">Services</a></li>
+                    <li><a href="#" class="block text-white hover:text-yellow-300 transition duration-300">Contact</a></li>
+                    <li><a href="#" class="block text-white hover:text-yellow-300 transition duration-300">+ telephone number</a></li>
+                </ul>
+            </nav>
         </header>
-        <section class="flex flex-col items-center justify-center h-3/4 text-white text-center">
-            <h1 class="text-4xl font-bold">Company name</h1>
-            <p class="text-xl mt-4">service</p>
+
+        <section class="flex flex-col items-center justify-center min-h-screen px-4 text-white text-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Company name</h1>
+            <p class="text-lg md:text-xl lg:text-2xl">service</p>
         </section>
     </div>
 
-    <section class="py-16 text-center">
-        <h2 class="text-3xl font-bold mb-8">Book your place</h2>
-        <p class="mb-8 justify-center">Pure Mining - this is a reliable hotel for ASIC miners. Enjoy comfort!</p>
-        <button class="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700">Request</button>
+    <!-- Book Section -->
+    <section class="py-12 lg:py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 lg:mb-8">Book your place</h2>
+            <p class="mb-6 lg:mb-8 text-gray-700 text-sm md:text-base">Pure Mining - this is a reliable hotel for ASIC miners. Enjoy comfort!</p>
+            <button class="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700 transition duration-300 w-full sm:w-auto">Request</button>
+        </div>
     </section>
 
-    <section class="py-16">
-        <h2 class="text-3xl font-bold mb-12 text-center">Why Us?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Card 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-                <div class="bg-gray-200 p-4 rounded-full mb-4">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/marker.png" alt="City Center Office" class="w-8 h-8 mx-auto">
+    <!-- Why Us Section -->
+    <section class="py-12 lg:py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 lg:mb-12 text-center">Why Us?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gray-200 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">City center office</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-2">City center office</h3>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-                <div class="bg-gray-200 p-4 rounded-full mb-4">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/clock.png" alt="24 Hour Security" class="w-8 h-8 mx-auto">
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gray-200 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">24 hour security</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-2">24 hour security</h3>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
 
-            <!-- Card 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-                <div class="bg-gray-200 p-4 rounded-full mb-4">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/snowflake.png" alt="Cooling System" class="w-8 h-8 mx-auto">
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gray-200 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">Cooling system</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Cooling system</h3>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
 
-            <!-- Card 4 -->
-            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-                <div class="bg-gray-200 p-4 rounded-full mb-4">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/star.png" alt="Full Cycle Service" class="w-8 h-8 mx-auto">
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gray-200 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">Full cycle service</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Full cycle service</h3>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
 
-            <!-- Card 5 -->
-            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-                <div class="bg-gray-200 p-4 rounded-full mb-4">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/headset.png" alt="Technical Support" class="w-8 h-8 mx-auto">
+                <!-- Card 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gray-200 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1C12,1 17,3 17,8V12L19,14V20H5V14L7,12V8C7,3 12,1 12,1M12,7A2,2 0 0,0 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9A2,2 0 0,0 12,7Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">Technical support</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Technical support</h3>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
 
-            <!-- Card 6 -->
-            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-                <div class="bg-gray-200 p-4 rounded-full mb-4">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/low-price.png" alt="Low Cost" class="w-8 h-8 mx-auto">
+                <!-- Card 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gray-200 p-4 rounded-full mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">Low cost</h3>
+                    <p class="text-gray-700 text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Low cost</h3>
-                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-        </div> <Br></Br>
-        <h2 class="text-3xl font-bold mb-12 text-center">Hotel mining infrastructure</h2>
+        </div>
     </section>
-  <section class="py-16">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-start bg-blue-50 p-8 rounded-lg">
-            <div class="w-full md:w-1/2 p-4">
-                <img src="image1.jpg" alt="Container Image" class="w-full h-auto">
-            </div>
-            <div class="w-full md:w-1/2 p-4">
-                <h2 class="text-2xl font-bold mb-4">Container layout and placement.</h2>
-                <p class="mb-4">Miners are placed in mining containers equipped in accordance with all the rules of safety standards.</p>
-                <div class="grid grid-cols-2 gap-4 bg-blue-50">
-                    <div class="p-4">
-                        <p class="font-semibold">Price</p>
-                        <p>6 kW/h</p>
-                    </div>
-                    <div class="p-4">
-                        <p class="font-semibold">Power</p>
-                        <p>4,000 watts</p>
-                    </div>
-                    <div class="p-4">
-                        <p class="font-semibold">Type</p>
-                        <p>Container</p>
-                    </div>
-                    <div class="p-4">
-                        <p class="font-semibold">Status</p>
-                        <p>Open</p>
-                    </div>
-                    <div class="p-4">
-                        <p class="font-semibold">Location</p>
-                        <p>c. City</p>
-                    </div>
-                    <div class="p-4">
-                        <p class="font-semibold">Length</p>
-                        <p>6 meters</p>
+
+    <!-- Mining Infrastructure Section -->
+    <section class="py-12 lg:py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 lg:mb-12 text-center">Hotel mining infrastructure</h2>
+            
+            <div class="flex flex-col lg:flex-row items-start bg-blue-50 rounded-lg overflow-hidden shadow-lg">
+                <div class="w-full lg:w-1/2">
+                    <div class="container-img h-64 md:h-80 lg:h-full lg:min-h-96"></div>
+                </div>
+                <div class="w-full lg:w-1/2 p-6 lg:p-8">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Container layout and placement.</h3>
+                    <p class="mb-6 text-gray-700 text-sm md:text-base">Miners are placed in mining containers equipped in accordance with all the rules of safety standards.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-3 bg-white rounded-lg shadow-sm">
+                            <p class="font-semibold text-sm md:text-base">Price</p>
+                            <p class="text-sm md:text-base text-gray-600">6 kW/h</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg shadow-sm">
+                            <p class="font-semibold text-sm md:text-base">Power</p>
+                            <p class="text-sm md:text-base text-gray-600">4,000 watts</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg shadow-sm">
+                            <p class="font-semibold text-sm md:text-base">Type</p>
+                            <p class="text-sm md:text-base text-gray-600">Container</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg shadow-sm">
+                            <p class="font-semibold text-sm md:text-base">Status</p>
+                            <p class="text-sm md:text-base text-gray-600">Open</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg shadow-sm">
+                            <p class="font-semibold text-sm md:text-base">Location</p>
+                            <p class="text-sm md:text-base text-gray-600">c. City</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg shadow-sm">
+                            <p class="font-semibold text-sm md:text-base">Length</p>
+                            <p class="text-sm md:text-base text-gray-600">6 meters</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-16  text-center">
-    <h2 class="text-3xl font-bold mb-4">Hardware Store</h2>
-    <p class="mb-8">On our site you can purchase the necessary equipment for mining, as well as get advice from our experts.</p>
-    <button class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300">
-        Store
-    </button>
-</section>
-<section class="relative bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('image3.jpg');">
-    <div class="bg-black p-8 rounded-lg w-1/2 text-center">
-        <h2 class="text-4xl font-bold mb-4 text-white">Contacts:</h2>
-        <p class="text-xl mb-2 text-white">Telephone: </p>
-        <p class="text-xl mb-2 text-white">E-mail:</p>
-        <p class="text-xl text-white">Address: </p>
-    </div>
-</section>
-<footer class="bg-black text-white h-64 overflow-y-auto">
-          <div class="footer-menu" style="position: sticky; top: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 10;">
-        <ul class="flex justify-center space-x-8 py-4">
-            <li><a href="#mining-hotel" class="hover:underline">Mining hotel</a></li>
-            <li><a href="#score" class="hover:underline">Score</a></li>
-            <li><a href="#investments" class="hover:underline">Investments</a></li>
-            <li><a href="#shipping-and-payment" class="hover:underline">Shipping and payment</a></li>
-            <li><a href="#contacts" class="hover:underline">Contacts</a></li>
-        </ul>
-    </div>
+    <!-- Hardware Store Section -->
+    <section class="py-12 lg:py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Hardware Store</h2>
+            <p class="mb-6 lg:mb-8 text-gray-700 text-sm md:text-base">On our site you can purchase the necessary equipment for mining, as well as get advice from our experts.</p>
+            <button class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 w-full sm:w-auto">
+                Store
+            </button>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section class="contact-bg relative min-h-screen flex items-center justify-center px-4">
+        <div class="bg-black bg-opacity-90 p-6 lg:p-8 rounded-lg w-full max-w-md lg:max-w-lg text-center">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-white">Contacts:</h2>
+            <div class="space-y-4 text-white">
+                <p class="text-lg md:text-xl">Telephone: [Your Phone]</p>
+                <p class="text-lg md:text-xl">E-mail: [Your Email]</p>
+                <p class="text-lg md:text-xl">Address: [Your Address]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white">
+        <div class="py-8 px-4">
+            <nav class="max-w-6xl mx-auto">
+                <ul class="flex flex-wrap justify-center gap-4 lg:gap-8 text-sm md:text-base">
+                    <li><a href="#mining-hotel" class="hover:text-yellow-300 transition duration-300">Mining hotel</a></li>
+                    <li><a href="#score" class="hover:text-yellow-300 transition duration-300">Score</a></li>
+                    <li><a href="#investments" class="hover:text-yellow-300 transition duration-300">Investments</a></li>
+                    <li><a href="#shipping-and-payment" class="hover:text-yellow-300 transition duration-300">Shipping and payment</a></li>
+                    <li><a href="#contacts" class="hover:text-yellow-300 transition duration-300">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="border-t border-gray-700 py-4 px-4 text-center text-sm text-gray-400">
+            <p>&copy; 2024 Company Name. All rights reserved.</p>
+        </div>
     </footer>
-
-
 </body>
 </html>
